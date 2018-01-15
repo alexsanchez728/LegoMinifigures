@@ -107,7 +107,26 @@ namespace LegoMinifigures.Figures
             Console.WriteLine("Jump!");
             return "jump";
         }
-
+        public string LookLeft()
+        {
+            Console.WriteLine("looking left");
+            return "left";
+        }
+        public string LookRight()
+        {
+            Console.WriteLine("looking right");
+            return "right";
+        }
+        public string LookUp()
+        {
+            Console.WriteLine("looking up");
+            return "up";
+        }
+        public string LookDown()
+        {
+            Console.WriteLine("looking down");
+            return "down";
+        }
         public string Unlocks()
         {
             _accessories += ", Batmobile";

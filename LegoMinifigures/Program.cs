@@ -52,7 +52,23 @@ namespace LegoMinifigures
                 {
                     LegoGuy1.Unlocks();
                 }
-        } while (cki.Key != ConsoleKey.Escape);
+                if (cki.Key == ConsoleKey.LeftArrow)
+                {
+                    LegoGuy1.LookLeft();
+                }
+                if (cki.Key == ConsoleKey.RightArrow)
+                {
+                    LegoGuy1.LookRight();
+                }
+                if (cki.Key == ConsoleKey.UpArrow)
+                {
+                    LegoGuy1.LookUp();
+                }
+                if (cki.Key == ConsoleKey.DownArrow)
+                {
+                    LegoGuy1.LookDown();
+                }
+            } while (cki.Key != ConsoleKey.Escape);
 
         }
     }
