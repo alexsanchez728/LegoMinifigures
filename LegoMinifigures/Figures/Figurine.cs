@@ -5,76 +5,20 @@ namespace LegoMinifigures.Figures
     class Figurine
     {
         //Hair/Hat, Head, Torso, Legs, Accessories, etc.
-        protected string _topper;
-        protected string _head;
-        protected string _toroso;
-        protected string _legs;
-        protected string _accessories;
-
-        public string Topper
-        {
-            get
-            {
-                return _topper;
-            }
-            set
-            {
-                _topper = value;
-            }
-        }
-        public string Head
-        {
-            get
-            {
-                return _head;
-            }
-            set
-            {
-                _head = value;
-            }
-        }
-        public string Toroso
-        {
-            get
-            {
-                return _toroso;
-            }
-            set
-            {
-                _toroso = value;
-            }
-        }
-        public string Legs
-        {
-            get
-            {
-                return _legs;
-            }
-            set
-            {
-                _legs = value;
-            }
-        }
-        public string Accessories
-        {
-            get
-            {
-                return _accessories;
-            }
-            set
-            {
-                _accessories = value;
-            }
-        }
+        public string Topper { get; set; }
+        public string Head { get; set; }
+        public string Toroso { get; set; }
+        public string Legs { get; set; }
+        public string Accessories { get; set; }
 
         public void Display()
         {
             Console.WriteLine("Your Lego Figure:");
-            Console.WriteLine($"Topper: {_topper}");
-            Console.WriteLine($"Head: {_head}");
-            Console.WriteLine($"Toroso: {_toroso}");
-            Console.WriteLine($"Legs: {_legs}");
-            Console.WriteLine($"Accessories: {_accessories}");
+            Console.WriteLine($"Topper: {Topper}");
+            Console.WriteLine($"Head: {Head}");
+            Console.WriteLine($"Toroso: {Toroso}");
+            Console.WriteLine($"Legs: {Legs}");
+            Console.WriteLine($"Accessories: {Accessories}");
         }
 
         public string MoveForward()
@@ -102,10 +46,20 @@ namespace LegoMinifigures.Figures
             Console.WriteLine("Attack!");
             return "attack";
         }
+        public string SpecialAttack()
+        {
+            Console.WriteLine("SUPER!");
+            return "Special attack";
+        }
         public string Jump()
         {
             Console.WriteLine("Jump!");
             return "jump";
+        }
+        public string DoubleJump()
+        {
+            Console.WriteLine("DOUBLE JUMP!");
+            return "double jump";
         }
         public string LookLeft()
         {
@@ -129,7 +83,7 @@ namespace LegoMinifigures.Figures
         }
         public string Unlocks()
         {
-            _accessories += ", Batmobile";
+            Accessories += ", Batmobile";
             Display();
             return "unlocked";
         }

@@ -8,10 +8,7 @@ namespace LegoMinifigures
     {
         static void Main(string[] args)
         {
-            ConsoleKeyInfo cki;
-
-            Console.WriteLine("Press (ESC) to close");
-
+ 
             var LegoGuy1 = new Figurine
             {
                 Topper = "Red Cap",
@@ -21,55 +18,47 @@ namespace LegoMinifigures
                 Accessories = "Pickaxe"
             };
             LegoGuy1.Display();
-        do
-        {
-            cki = Console.ReadKey(true); // intercept = true; so keypress doesn't print
-                if (cki.Key == ConsoleKey.W)
+
+            while (true)
+            {
+                var userInput = Console.ReadLine();
+                if (userInput == "w")
                 {
                     LegoGuy1.MoveForward();
                 }
-                if (cki.Key == ConsoleKey.S)
+                else if (userInput == "s")
                 {
                     LegoGuy1.MoveBackward();
                 }
-                if (cki.Key == ConsoleKey.A)
+                else if (userInput == "a")
                 {
                     LegoGuy1.MoveLeft();
                 }
-                if (cki.Key == ConsoleKey.D)
+                else if (userInput == "d")
                 {
                     LegoGuy1.MoveRight();
                 }
-                if (cki.Key == ConsoleKey.Q)
+                else if (userInput == "q")
                 {
                     LegoGuy1.Attack();
                 }
-                if (cki.Key == ConsoleKey.Spacebar)
+                else if (userInput == "qq")
+                {
+                    LegoGuy1.SpecialAttack();
+                }
+                else if (userInput == " ")
                 {
                     LegoGuy1.Jump();
                 }
-                if (cki.Key == ConsoleKey.Enter)
+                else if (userInput == "  ")
                 {
+                    LegoGuy1.DoubleJump();
+                }
+                else if (userInput == "secret")
+                    {
                     LegoGuy1.Unlocks();
                 }
-                if (cki.Key == ConsoleKey.LeftArrow)
-                {
-                    LegoGuy1.LookLeft();
-                }
-                if (cki.Key == ConsoleKey.RightArrow)
-                {
-                    LegoGuy1.LookRight();
-                }
-                if (cki.Key == ConsoleKey.UpArrow)
-                {
-                    LegoGuy1.LookUp();
-                }
-                if (cki.Key == ConsoleKey.DownArrow)
-                {
-                    LegoGuy1.LookDown();
-                }
-            } while (cki.Key != ConsoleKey.Escape);
-
+            }
         }
     }
 }
